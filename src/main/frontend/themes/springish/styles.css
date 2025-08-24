@@ -1,0 +1,132 @@
+root {
+    /* Dark canvas with spring‑green primary */
+    --lumo-base-color: hsl(210, 15%, 8%);
+    --lumo-body-text-color: hsl(210, 10%, 96%);
+    --lumo-primary-color: hsl(135, 70%, 45%);
+    --lumo-primary-text-color: var(--lumo-primary-color);
+    --lumo-success-color: hsl(135, 70%, 45%);
+    --lumo-border-radius-m: 14px;
+    --lumo-border-radius-l: 20px;
+    --lumo-line-height-m: 1.5;
+}
+
+/*:root {*/
+/*    --lumo-primary-color: #68BD45;           !* Greenish primary color *!*/
+/*    --lumo-primary-text-color: #68BD45;*/
+/*    --lumo-base-color: #f3f7f0;              !* light greenish background *!*/
+/*    --lumo-body-text-color: #333333;         !* main text color *!*/
+/*    --lumo-font-family: "Open Sans", sans-serif;*/
+/*}*/
+/* Utility pills */
+.pill[theme~="primary"], .pill {
+    border-radius: 9999px;
+    padding: 0.4rem 1rem;
+}
+.pill.accent {
+    background: var(--lumo-primary-color);
+    color: black;
+}
+
+/* Topbar */
+.topbar {
+    padding: 0.5rem 1rem;
+    backdrop-filter: blur(6px);
+    background: color-mix(in oklab, var(--lumo-base-color), transparent 40%);
+    border-bottom: 1px solid color-mix(in oklab, white 10%, transparent);
+}
+/* Hero */
+.home .hero {
+    padding: 6rem 1rem 4rem;
+    text-align: center;
+    background: radial-gradient(1200px 600px at 50% 0%, color-mix(in oklab, var(--lumo-primary-color), transparent 80%), transparent),
+    radial-gradient(800px 400px at 10% 10%, color-mix(in oklab, var(--lumo-primary-color), transparent 85%), transparent);
+}
+.hero-title {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    line-height: 1.1;
+    margin: 0 0 0.5rem 0;
+}
+.hero-subtitle {
+    font-size: clamp(1rem, 2.2vw, 1.25rem);
+    opacity: .85;
+    margin: 0 auto 1.25rem;
+    max-width: 56ch;
+}
+
+/* Logos */
+.logo-strip {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 1.5rem;
+    align-items: center;
+    padding: 2rem 1rem;
+    opacity: .8;
+}
+.logo-strip .logo { max-height: 36px; margin: 0 auto; filter: grayscale(1)
+brightness(1.2); }
+/* Feature grid */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0,1fr));
+    gap: 1rem;
+    padding: 2rem 1rem 3rem;
+}
+
+.feature-card {
+    border: 1px solid color-mix(in oklab, white 12%, transparent);
+    background: color-mix(in oklab, var(--lumo-base-color), white 2%);
+    border-radius: var(--lumo-border-radius-l);
+    padding: 1.25rem;
+}
+.feature-card h3 { margin: .5rem 0 .25rem; }
+.feature-card p { opacity: .85; margin: 0; }
+.feature-image { width: 48px; height: 48px; }
+/* Alternating content */
+.alt-section {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 2rem;
+    padding: 3rem 1rem;
+    align-items: center;
+}
+.alt-text h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 0 0 .5rem; }
+.alt-text p { opacity: .9; margin: 0; max-width: 60ch; }
+.alt-image { width: 100%; border-radius: var(--lumo-border-radius-l); border:
+        1px solid color-mix(in oklab, white 10%, transparent); }
+/* CTA */
+.cta-banner {
+    margin: 2rem 1rem 4rem;
+    padding: 2rem;
+    border-radius: var(--lumo-border-radius-l);
+    border: 1px solid color-mix(in oklab, white 12%, transparent);
+    background: linear-gradient(180deg, color-mix(in oklab, var(--lumo-primary-color), transparent 70%), transparent);
+    text-align: center;
+}
+.cta-actions { display: flex; gap: .75rem; justify-content: center; margin-top: 1rem; }
+
+/* Footer‑like feel (attach to MainLayout's content if you add one) */
+.footer {
+    padding: 2rem 1rem 3rem;
+    opacity: .8;
+    border-top: 1px solid color-mix(in oklab, white 10%, transparent);
+}
+/* Responsive */
+@media (max-width: 1100px) {
+    .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .alt-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .logo-strip {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+}

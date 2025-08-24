@@ -1,0 +1,9 @@
+{
+  "lumoImports": ["typography", "color", "spacing", "badge"],
+  "parent": "lumo",
+  "assets": {
+    "images": [
+      { "from": "./images", "to": "images" }
+    ]
+  }
+}
